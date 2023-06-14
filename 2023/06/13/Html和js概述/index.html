@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="01.HTML概述 什么是html？ Html是一种超文本标记语言，英文名字叫HyperText Markup Language。超级文本标记语言是一种规范，也是一种标准，它通过标记符号来标记要显示的网页中的各个部分。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Html和js概述">
+<meta property="og:url" content="http://example.com/2023/06/13/Html%E5%92%8Cjs%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="枫叶苑">
+<meta property="og:description" content="01.HTML概述 什么是html？ Html是一种超文本标记语言，英文名字叫HyperText Markup Language。超级文本标记语言是一种规范，也是一种标准，它通过标记符号来标记要显示的网页中的各个部分。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-06-13T08:20:39.000Z">
+<meta property="article:modified_time" content="2023-06-14T05:46:48.696Z">
+<meta property="article:author" content="枫叶">
+<meta property="article:tag" content="网络基础">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2023/06/13/Html%E5%92%8Cjs%E6%A6%82%E8%BF%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Html和js概述 | 枫叶苑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">枫叶苑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+        <li class="menu-item menu-item-guestbook">
+
+    <a href="/guestbook/" rel="section"><i class="fa fa-book fa-fw"></i>留言</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/06/13/Html%E5%92%8Cjs%E6%A6%82%E8%BF%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="枫叶">
+      <meta itemprop="description" content="选择有时候比努力更重要">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="枫叶苑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Html和js概述
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-06-13 16:20:39" itemprop="dateCreated datePublished" datetime="2023-06-13T16:20:39+08:00">2023-06-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-14 13:46:48" itemprop="dateModified" datetime="2023-06-14T13:46:48+08:00">2023-06-14</time>
+              </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2023/06/13/Html%E5%92%8Cjs%E6%A6%82%E8%BF%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2023/06/13/Html%E5%92%8Cjs%E6%A6%82%E8%BF%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="html概述">01.HTML概述</h2>
+<h3 id="什么是html">什么是html？</h3>
+<p>Html是一种超文本标记语言，英文名字叫HyperText Markup
+Language。超级文本标记语言是一种规范，也是一种标准，它通过标记符号来标记要显示的网页中的各个部分。</p>
+<span id="more"></span>
+<h4 id="基础骨架">基础骨架</h4>
+<pre><code>&lt;html\&gt; &lt;/html\&gt;限定了文档的开始点和结束点。
+&lt;head\&gt;定义文档头部。
+&lt;body\&gt;定义文档主体。</code></pre>
+<h6 id="head部分">head部分</h6>
+<pre><code>1.&lt;title\&gt; 网页标题栏显示的信息
+2.&lt;meta\&gt; html的元信息标签，搜索引擎抓取网页时分析</code></pre>
+<h6 id="body部分">body部分</h6>
+<pre><code>1.&lt;p&gt;段落标签  &lt;p&gt;文本&lt;/p\&gt;
+2.&lt;a&gt;超链接标签
+ ex：&lt;a href= &quot;http://www.baidu.com&quot;target= “_blank”&gt;百度一下&lt;/a&gt;&lt;a href= &quot;#top&quot;&gt;跳转&lt;/a&gt;需创建一个id属性id=&quot;top&quot;
+3.&lt;img&gt;图片标签
+    &lt;img src=&quot;图片地址.jpg&quot; alt=&quot;图片加载失败&quot; title=&quot;&quot;/&gt;
+4.布局标签
+    a) &lt;div&gt;块级标签:属于容器级的标签，div标签定义的是一个区域;加上css样式，实现网页布局重构。
+    b) &lt;Span&gt;行级标签:属于文本级的标签，只能存放文本，图片，表单元素。
+5.3种列表方式
+    1.无序：&lt;ul&gt;&lt;li&gt;&lt;/li&gt;&lt;/ul&gt;
+    2.有序：&lt;ol&gt;&lt;/ol&gt;
+    3.自定义列表：&lt;dl&gt;&lt;dt&gt;&lt;dd&gt;&lt;/dd&gt;&lt;/dt&gt;&lt;/dl&gt;
+6.表格
+    &lt;table&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+7.form表单和里边的小部件
+a) form表单：from表单是用来收集用户信息，并向服务器提交进行处理
+    表单提交有两种方式:
+    GET:把数据扒拉下来，表单数据附加到请求页面的URL地址后面;如:http:7/demo.com/ ?inameergouktype 1&#39;
+    POST:把数据提交上去，在HTTP请求中嵌入表单数据,无长度限制,较GEr方式传输数据更安全。
+b)四种input标签
+    1.type=&quot;text&quot; 文本框
+    2.type=&quot;password&quot; 密码框
+    3.type=“radio” 单选
+    4.type=“checkbox” 多选
+c)下拉列表
+    &lt;select&gt;
+        &lt;option&gt;&lt;/options&gt;
+    &lt;/select&gt;
+d)提交按钮
+    &lt;input type=&quot;submit&quot; &gt;
+e)重置按钮
+    &lt;input type=&quot;reset&quot;&gt;
+f)多行文本框
+    &lt;textarea cols=&quot;30&quot; rows=&quot;10&quot;&gt;
+g)label标签
+8.HTML特殊符号
+在HTML中有些字符是有特殊含义的，不能在浏览器中直接显示出来的。比如:&lt;p我是&lt;h1&gt;标签哦&lt;/p&gt;#&lt;h1&gt;被当作主标题
+解决方式:实体字符，&lt;p&gt;我是&amp;lt; h1&amp;gt;标签哦&lt;/p&gt;</code></pre>
+<h2 id="js概述">02.js概述</h2>
+<h3 id="什么是javascript">什么是javascript？</h3>
+是一种可以在浏览器中运行的脚本语言。主要用来实现在浏览器端的动作︰用户交互、数据处理
+#### js的存在方式 01.
+<script></script>
+<pre><code>02.在&lt;srcipt&gt;的src属性或指定的外部文件中
+03.在某个HTML事件处理器中如onclick、onmouseover等
+  ex：&lt;input type=&quot;button&quot; value=&quot;点击弹出对话框&quot; onclick=&quot;var a =&#39;test&#39;; alert(test)&quot;/&gt;</code></pre>
+<h4 id="什么是dom">什么是DOM</h4>
+全称︰文档对象模型(DocumentObject Model
+)。访问和操作HTML文档的标准方法，通过利用javascript来访问、操作HTML。
+###### DOM操作-通过javascript改变网页内容
+01.获取元素:getElementByld()通过ID获取元素 EX:
+x=document.getElementById( "name" ) ;
+02.获取内容:innerHTML获取对应的内容 EX:alert(
+'id为name的内容是'+x.innerHTML); 修改内容: innerHTML赋值修改元素内容
+EX:x.innerHTML="javascript真好玩"; 03.创建动态效果
+document.write()写入到HTML页面中 04.添加页面交互效果
+利用事件属性，比如onclick function changetext(id){
+id.innerHTML=欢迎参加web安全工程师的学习"; }
+<h2 onclick="changetext(this)">
+Clickhere
+</h2>
+<pre><code>onclick 当用户点击某个对象时调用的事件句柄。</code></pre>
+<h4 id="什么是bom">什么是BOM</h4>
+<p>全称︰浏览器对象模型(Browser Object
+Model)。它使JavaScript有能力与浏览器进行“"对话"。 ##### bom操作
+1.让浏览器弹出警告 alert() :警告弹窗 confirm()∶确定弹窗
+prompt()∶提示弹窗 通常用来证明漏洞的存在，比如xss 2.获取Cookie信息
+document.cookie alert(document.cookie) 3.获取浏览器信息
+屏幕信息(window.)screen 1.获取/控制页面信息 (window.)location</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="tag"># 网络基础</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/06/12/hello-world/" rel="prev" title="Hello World">
+      <i class="fa fa-chevron-left"></i> Hello World
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/06/14/XSS%E5%9F%BA%E7%A1%80%E4%B8%8E%E5%88%A9%E7%94%A8/" rel="next" title="XSS基础与利用">
+      XSS基础与利用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#html%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">01.HTML概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFhtml"><span class="nav-number">1.1.</span> <span class="nav-text">什么是html？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E9%AA%A8%E6%9E%B6"><span class="nav-number">1.1.1.</span> <span class="nav-text">基础骨架</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#head%E9%83%A8%E5%88%86"><span class="nav-number">1.1.1.0.1.</span> <span class="nav-text">head部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#body%E9%83%A8%E5%88%86"><span class="nav-number">1.1.1.0.2.</span> <span class="nav-text">body部分</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#js%E6%A6%82%E8%BF%B0"><span class="nav-number">2.</span> <span class="nav-text">02.js概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFjavascript"><span class="nav-number">2.1.</span> <span class="nav-text">什么是javascript？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFdom"><span class="nav-number">2.1.1.</span> <span class="nav-text">什么是DOM</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link"><span class="nav-number">3.</span> <span class="nav-text">
+Clickhere
+</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AFbom"><span class="nav-number">3.0.1.</span> <span class="nav-text">什么是BOM</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="枫叶"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">枫叶</p>
+  <div class="site-description" itemprop="description">选择有时候比努力更重要</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/wwwwhhd" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;wwwwhhd" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      链接网站
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://github.com/" title="https:&#x2F;&#x2F;github.com&#x2F;" rel="noopener" target="_blank">Github</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">枫叶</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">4k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">4 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i>
+  <span id="busuanzi_container_site_uv">
+    本站总访客数:<span id="busuanzi_value_site_uv"></span>&nbsp;&nbsp;| 
+  </span>
+  <span id="busuanzi_container_site_pv">
+      &nbsp;本站总访问量<span id="busuanzi_value_site_pv"></span>次
+  </span>
+  </div>
+  </div>
+<script>
+      var now = new Date(); 
+      function createtime() { 
+          var grt= new Date("06/12/2023 12:00:00");//此处修改你的建站时间或者网站上线时间 
+          now.setTime(now.getTime()+250); 
+          days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+          hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+          if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+          mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+          seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+          snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+          document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+          document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+      } 
+  setInterval("createtime()",250);
+  </script>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'DX6Bl3KrtgdGNAk3iz7uS5nf-gzGzoHsz',
+      appKey     : 'iTY65sIa97anwQRA3SOiGSG2',
+      placeholder: "Just go go",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":70,"height":120},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
